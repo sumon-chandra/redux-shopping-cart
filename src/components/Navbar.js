@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { FiShoppingCart } from "react-icons/fi";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 function Navbar() {
   const items = useSelector((state) => state.cart);
   console.log(items);
@@ -14,20 +15,14 @@ function Navbar() {
         <nav className="navbar">
           <ul>
             <li>
-              <a href="#"> Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#"> About</a>
-            </li>
-            <li>
-              <a href="#">
+              <Link to="/cart">
                 {" "}
                 <FiShoppingCart />{" "}
                 <span className="toolkit">{items.length}</span>
-              </a>
-            </li>
-            <li>
-              <a href="#"> Prices</a>
+              </Link>
             </li>
           </ul>
         </nav>
