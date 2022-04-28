@@ -15,7 +15,7 @@ function Carts() {
         <h1 className="empty">Your cart is empty</h1>
       ) : (
         products.map((product) => (
-          <div className="cart-lists">
+          <div key={product.id} className="cart-lists">
             <img src={product.image} alt="" />
             <h3> {product.title}</h3>
             <h2>Price: {product.price}</h2>
